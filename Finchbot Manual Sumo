@@ -1,0 +1,15 @@
+from Finchbot.BirdBrain import Finch
+import pygame
+pygame.init()
+bird = finch()
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if pygame.K_w:
+                bird.setMove('F',10,70)
+            if pygame.K_d:
+                bird.setTurn('R',15,60)
+            if pygame.K_a:
+                bird.setTurn('L',15,60)
+            if pygame.K_s:
+                bird.setMove('B',10,70)
