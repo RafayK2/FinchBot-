@@ -1,4 +1,4 @@
-from Finchbot.BirdBrain import Finch
+
 import pygame
 pygame.init()
 bird = finch()
