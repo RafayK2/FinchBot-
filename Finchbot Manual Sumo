@@ -1,15 +1,27 @@
 from BirdBrain import Finch
+
+
 import pygame
+import keyboard
 pygame.init()
 bird = Finch()
+from time import sleep
+aKeyIsDown = False
+dKeyIsDown = False
+
+
 while True:
-    for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if pygame.K_w:
-                bird.setMove('F',10,70)
-            if pygame.K_d:
-                bird.setTurn('R',15,60)
-            if pygame.K_a:
-                bird.setTurn('L',15,60)
-            if pygame.K_s:
-                bird.setMove('B',10,70)
+    
+        
+    if keyboard.is_pressed('w'):
+        bird.setMotors(60, 60)
+    elif keyboard.is_pressed('d'):
+        bird.setTurn('R',30,100)
+    elif keyboard.is_pressed('a'):
+        bird.setTurn('L',30,100)
+    elif keyboard.is_pressed('s'):
+        bird.setMotors(-60,-60)
+    
+    else:
+        bird.setMotors(0,0)
+        bird.setTurn('R',0,0)
